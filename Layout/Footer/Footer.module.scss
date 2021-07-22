@@ -1,0 +1,36 @@
+@import "./../../styles/_variables.scss";
+
+.footer_wrapper {
+  background-color: #363636;
+  color: $white;
+  // text-align: center;
+  padding: 2rem 0;
+  .footer_log {
+    width: 100%;
+    // height: 100%;
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .footer_icons {
+    margin-top: 1rem;
+    color: #d3d3d3;
+    size: 22px;
+    font-size: 22px;
+    margin-right: 0.8rem;
+  }
+}
+
+//! Bottom Footer
+.bottom_footer {
+  background-color: #1c1c1c;
+  padding: .7rem 0;
+  color: #fff;
+  p{
+      margin-bottom: 0;
+      font-size: 14px;
+  }
+}
