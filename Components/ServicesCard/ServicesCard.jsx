@@ -11,7 +11,7 @@ export default function ServicesCard(props) {
         <div className={styles.services_card_wrapper}>
           <div className={styles.services_card_image}>
             <img
-              src={`http://localhost:4000/${props?.image}`}
+              src={`https://eurofins-backend.herokuapp.com/${props?.image}`}
               alt="servicesImage"
             />
           </div>
