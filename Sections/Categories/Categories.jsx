@@ -9,7 +9,7 @@ function Categories(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/category`)
+      .get(`https://eurofins-backend.herokuapp.com/category`)
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
           const updatedRes = res.data.message;
@@ -40,7 +40,7 @@ function Categories(props) {
                     className={styles.category_card_image}
                   >
                     <img
-                      src={`http://localhost:4000/${x.image}`}
+                      src={`https://eurofins-backend.herokuapp.com/${x.image}`}
                       alt="categoryImage"
                     />
                   </div>

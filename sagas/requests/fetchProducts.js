@@ -1,12 +1,13 @@
 import axios from "axios";
 
-const url = "http://localhost:4000/product";
+const url = "https://eurofins-backend.herokuapp.com";
 
 //! Fetch all products
 export const fetchProducts = () => {
   return axios.request({
     method: "get",
-    url: "http://localhost:4000/product",
+    // url: "http://localhost:4000/product",
+    url: "https://eurofins-backend.herokuapp.com/product",
   });
 };
 
@@ -16,7 +17,7 @@ export const fetchProductDetail = (action) => {
   return axios
     .request({
       method: "get",
-      url: `http://localhost:4000/product/${id}`,
+      url: `https://eurofins-backend.herokuapp.com/product/${id}`,
     })
     .catch((err) => console.log(err));
 };
@@ -26,7 +27,7 @@ export const postProducts = (action) => {
   debugger;
   const updatedData = action.payload;
   return axios.post(
-    `http://localhost:4000/order`, updatedData);
+    `https://eurofins-backend.herokuapp.com/order`, updatedData);
 };
 
 // export default fetchProducts;

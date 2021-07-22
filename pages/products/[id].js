@@ -18,7 +18,7 @@ export default function Products() {
   useEffect(() => {
     if (id && id !== "" && id !== "[id]") {
       axios
-        .get(`http://localhost:4000/product`)
+        .get(`https://eurofins-backend.herokuapp.com/product`)
         .then((res) => {
           const updatedRes = res.data.message;
           const filterProducts = updatedRes.filter(

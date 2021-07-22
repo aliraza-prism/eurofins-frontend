@@ -47,22 +47,7 @@ const TestDetails = ({ productDetail }) => {
           <Col xs={12} md={5}>
             <div className={styles.test_details_text}>
               <h2>{productDetail?.name}</h2>
-              <p>
-                A Home Paternity Test is the easiest and
-                quickest way to confirm whether an alleged
-                father is the biological father of a child.
-                Get peace of mind today, with testing from
-                just $180.
-              </p>
-              <p>
-                Our Legal Paternity Testing is performed in
-                accordance with the Family Law Act 1975 and
-                can be used for a range of legal issues,
-                including changes to birth certificates and
-                for matters before the Family Law Courts,
-                such as child support and child custody
-                disputes.
-              </p>
+              <p>{productDetail?.description}</p>
             </div>
           </Col>
           {/* //! ************Order Form ************ */}
