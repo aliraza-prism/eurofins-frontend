@@ -5,8 +5,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import ServicesCard from "../../Components/ServicesCard";
-import ConfidentialServices from "../../Sections/ConfidentialServices/ConfidentialServices";
-import ProductGrid from "../../Sections/ProductGrid";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -40,7 +38,6 @@ export default function Products() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <ConfidentialServices filteredProducts={products} /> */}
       <Container>
         <Row>
           {products?.map((x) => (

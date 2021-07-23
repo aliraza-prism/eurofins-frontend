@@ -9,16 +9,30 @@ import styles from "./TestDetails.module.scss";
 import { BiPhone } from "react-icons/bi";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { createPostOrder } from "../../redux/post-product/action";
+import axios from "axios";
 
 const TestDetails = ({ productDetail }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [contact, setContact] = useState([]);
   const dispatch = useDispatch();
   const testId = productDetail?._id;
+
+  useEffect(() => {
+    axios
+      .get(`https://eurofins-backend.herokuapp.com/contact`)
+      .then((res) => {
+        if (res.status === 200 || res.status === 201) {
+          const contactRes = res.data.message;
+          setContact(contactRes);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   //! Handle Submit
   const handleSubmit = (e) => {
@@ -107,32 +121,40 @@ const TestDetails = ({ productDetail }) => {
         <div className={styles.test_contact_wrap}>
           <h4>Contact Details:</h4>
           <div>
-            <Row>
-              <Col sm={4}>
-                <div className={styles.contact_number}>
-                  <div className={styles.contact_icon_wrap}>
-                    <BiPhone /> Phone Number
+            {contact?.map((x) => (
+              <Row key={x._id}>
+                <Col sm={4}>
+                  <div className={styles.contact_number}>
+                    <div
+                      className={styles.contact_icon_wrap}
+                    >
+                      <BiPhone /> Phone Number
+                    </div>
+                    {x.phone}
                   </div>
-                  03206625492
-                </div>
-              </Col>
-              <Col sm={4}>
-                <div className={styles.contact_number}>
-                  <div className={styles.contact_icon_wrap}>
-                    <FaWhatsapp /> Whatsapp Number
+                </Col>
+                <Col sm={4}>
+                  <div className={styles.contact_number}>
+                    <div
+                      className={styles.contact_icon_wrap}
+                    >
+                      <FaWhatsapp /> Whatsapp Number
+                    </div>
+                    {x.whatsapp}
                   </div>
-                  +92 3206625492
-                </div>
-              </Col>
-              <Col sm={4}>
-                <div className={styles.contact_number}>
-                  <div className={styles.contact_icon_wrap}>
-                    <HiOutlineMail /> Email
+                </Col>
+                <Col sm={4}>
+                  <div className={styles.contact_number}>
+                    <div
+                      className={styles.contact_icon_wrap}
+                    >
+                      <HiOutlineMail /> Email
+                    </div>
+                    {x.email}
                   </div>
-                  arslanshahab@gmail.com
-                </div>
-              </Col>
-            </Row>
+                </Col>
+              </Row>
+            ))}
           </div>
         </div>
       </Container>

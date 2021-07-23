@@ -1,7 +1,6 @@
 import Head from "next/head";
 // import styles from '../styles/Home.module.css'
 import Slider from "./../Components/Slider/Slider";
-import ConfidentialServices from "./../Sections/ConfidentialServices";
 import OurServices from "../Sections/OurServices/OurServices";
 import TestingSpecialist from "../Sections/TestingSpecialist";
 import DNALabs from "../Sections/DNAlabs";
@@ -36,7 +35,6 @@ export default function Home() {
       </Head>
 
       <Slider />
-      <ConfidentialServices products={products} />
       <Categories/>
       <OurServices />
       <TestingSpecialist />
