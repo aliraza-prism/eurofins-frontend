@@ -28,12 +28,14 @@ export default function Appbar() {
           className={styles.navbar_wrap}
         >
           <Container>
-            <Navbar.Brand href="/">
-              <div className={styles.logo_wrapper}>
-                <img src="/logo.png" alt="logo" />
-              </div>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <div className="d-flex justify-content-between">
+              <Navbar.Brand href="/">
+                <div className={styles.logo_wrapper}>
+                  <img src="/logo.png" alt="logo" />
+                </div>
+              </Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            </div>
             <Navbar.Collapse
               id={`basic-navbar-nav justify-content-end ${styles.navbar_list_wrap}`}
               style={{ justifyContent: "flex-end" }}
@@ -45,7 +47,7 @@ export default function Appbar() {
                   alignItems: "center",
                 }}
               >
-                <Link href="/">
+                <Link href="/" passHref={true}>
                   <Nav.Link>Home</Nav.Link>
                 </Link>
                 <NavDropdown

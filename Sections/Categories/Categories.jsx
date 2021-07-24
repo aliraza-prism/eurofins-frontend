@@ -25,10 +25,10 @@ function Categories(props) {
         <h2>Our Range of Confidential Services</h2>
         <Row>
           {category?.map((x) => (
-            <Col sm={6} md={4} key={x._id}>
+            <Col sm={6} md={3} key={x._id}>
               <Link
                 href={`/products/[id]`}
-                as={`/products/${x.name}`}
+                as={`/products/${x.name.replace(/\s+/g, "-").toLowerCase()}`}
                 passHref
               >
                 <div

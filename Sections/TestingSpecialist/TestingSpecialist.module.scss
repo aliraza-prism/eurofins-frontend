@@ -7,6 +7,12 @@
 .testing_specialist_text {
   text-align: center;
   //   margin-bottom: 2rem;
+  h2{
+    text-transform: uppercase;
+    @media #{$sm} {
+      font-size: 24px;
+    }
+  }
   h6 {
     color: rgb(12, 211, 12);
     font-size: 18px;

@@ -23,7 +23,9 @@ class BottomSlider extends React.Component {
         </div>
         <CarouselProvider
           naturalSlideWidth={70}
-          naturalSlideHeight={8}
+          naturalSlideHeight={
+            window.screen <= 700 ? 50 : 8
+          }
           totalSlides={3}
           isPlaying={true}
           interval={3000}
@@ -42,20 +44,37 @@ class BottomSlider extends React.Component {
                   despite the negative result.
                 </p>
               </div>
-              
             </Slide>
 
             <Slide index={1} className={styles.slide_list}>
               <div className={styles.slider_list_text}>
                 <p>
-                We would like to pass on our thanks to the Eurofins Lab team for your prompt assistance in handling the testing of our samples. It has truly been a pleasure dealing with Eurofins Lab. Everyone we have dealt with has been prompt, knowledgeable and professional. We are very grateful for your team’s efforts and hard work in handling our request within short time frames.
+                  We would like to pass on our thanks to the
+                  Eurofins Lab team for your prompt
+                  assistance in handling the testing of our
+                  samples. It has truly been a pleasure
+                  dealing with Eurofins Lab. Everyone we
+                  have dealt with has been prompt,
+                  knowledgeable and professional. We are
+                  very grateful for your team’s efforts and
+                  hard work in handling our request within
+                  short time frames.
                 </p>
               </div>
             </Slide>
             <Slide index={2} className={styles.slide_list}>
               <div className={styles.slider_list_text}>
                 <p>
-                We would like to pass on our thanks to the Eurofins Lab team for your prompt assistance in handling the testing of our samples. It has truly been a pleasure dealing with Eurofins Lab. Everyone we have dealt with has been prompt, knowledgeable and professional. We are very grateful for your team’s efforts and hard work in handling our request within short time frames.
+                  We would like to pass on our thanks to the
+                  Eurofins Lab team for your prompt
+                  assistance in handling the testing of our
+                  samples. It has truly been a pleasure
+                  dealing with Eurofins Lab. Everyone we
+                  have dealt with has been prompt,
+                  knowledgeable and professional. We are
+                  very grateful for your team’s efforts and
+                  hard work in handling our request within
+                  short time frames.
                 </p>
               </div>
             </Slide>

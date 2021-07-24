@@ -22,7 +22,7 @@ export default function TestDetailsPage() {
   //! ---
 
   const filterProductId = products?.find(
-    (x) => id === x.name
+    (x) => id === x.name.replace(/\s+/g, "-").toLowerCase()
   );
   const updatedId = filterProductId?._id;
   const productDetail = useSelector(

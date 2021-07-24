@@ -26,7 +26,7 @@ export default function Products() {
   });
 
   const filterCategory = category?.find(
-    (x) => id === x.name
+    (x) => id === x.name.replace(/\s+/g, "-").toLowerCase()
   );
   const updatedId = filterCategory?._id;
   useEffect(() => {
