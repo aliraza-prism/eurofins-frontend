@@ -7,26 +7,49 @@ import { Col, Container, Row } from "react-bootstrap";
 import ServicesCard from "../../Components/ServicesCard";
 
 export default function Products() {
-  const [products, setProducts] = useState([]);
   const router = useRouter();
-  const path = router.asPath.split("/");
-  const id = path[2];
-  console.log("Category id", id);
-
+  const { id } = router.query;
+  const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState([]);
   useEffect(() => {
-    if (id && id !== "" && id !== "[id]") {
+    axios
+      .get(
+        `https://eurofins-backend.herokuapp.com/category`
+      )
+      .then((res) => {
+        if (res.status === 200 || res.status === 201) {
+          let categoryData = res.data.message;
+          setCategory(categoryData);
+        }
+      })
+      .catch((err) => console.log(err));
+  });
+
+  const filterCategory = category?.find(
+    (x) => id === x.name
+  );
+  const updatedId = filterCategory?._id;
+  useEffect(() => {
+    if (
+      updatedId &&
+      updatedId !== "" &&
+      updatedId !== "[id]"
+    ) {
       axios
-        .get(`https://eurofins-backend.herokuapp.com/product`)
+        .get(
+          `https://eurofins-backend.herokuapp.com/product`
+        )
         .then((res) => {
           const updatedRes = res.data.message;
           const filterProducts = updatedRes.filter(
-            (x) => id === x.category
+            (x) => updatedId === x.category
           );
+
           setProducts(filterProducts);
         })
         .catch((err) => console.log(err));
     }
-  }, [id]);
+  }, [updatedId]);
 
   return (
     <div>

@@ -18,7 +18,6 @@ function Categories(props) {
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log("Category Res", category);
 
   return (
     <div className={styles.categories_wrapper}>
@@ -27,10 +26,9 @@ function Categories(props) {
         <Row>
           {category?.map((x) => (
             <Col sm={6} md={4} key={x._id}>
-              {/* <Link href="/[id]" as={`/${props._id}`} passHref> */}
               <Link
                 href={`/products/[id]`}
-                as={`/products/${x._id}`}
+                as={`/products/${x.name}`}
                 passHref
               >
                 <div

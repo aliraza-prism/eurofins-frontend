@@ -34,7 +34,7 @@ export default function Footer() {
             <Col xs={6} md={3}>
               <div className={styles.footer_log}>
                 <img
-                  src="https://dnaq.com.au/wp-content/uploads/2020/01/DNAQ-green-white-logo.png"
+                  src="/logo.png"
                   alt="footerIamge"
                 />
               </div>

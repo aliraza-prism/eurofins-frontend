@@ -4,21 +4,38 @@ import { getProductDetail } from "../redux/product-details/action";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import { getProducts } from "../redux/product/action";
 
 export default function TestDetailsPage() {
   const router = useRouter();
   const { id } = router.query;
   const dispatch = useDispatch();
 
-  const productDetail = useSelector(
-    (state) => state.productDetail?.productDetail?.data?.message
+  //! ---
+  const products = useSelector(
+    (state) => state.products?.products?.data?.message
   );
 
   useEffect(() => {
-    if (id) { 
-      dispatch(getProductDetail(id));
+    dispatch(getProducts());
+  }, []);
+  //! ---
+
+  const filterProductId = products?.find(
+    (x) => id === x.name
+  );
+  const updatedId = filterProductId?._id;
+  const productDetail = useSelector(
+    (state) =>
+      state.productDetail?.productDetail?.data?.message
+  );
+
+  useEffect(() => {
+    if (updatedId) {
+      dispatch(getProductDetail(updatedId));
     }
-  }, [id]);
+  }, [updatedId]);
+  console.log("Product Details", productDetail);
 
   return (
     <div>

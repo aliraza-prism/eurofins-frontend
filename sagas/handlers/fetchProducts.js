@@ -25,6 +25,7 @@ import {
   POST_PRODUCT_SUCCESS,
 } from "../../redux/post-product/types";
 
+//! Handle products
 function* handleProducts() {
   try {
     const products = yield call(fetchProducts);
@@ -39,9 +40,7 @@ function* handleProducts() {
     });
   }
 }
-// function* watcherProductSaga() {
-//   yield takeEvery(GET_PRODUCTS_REQUEST, handleProducts);
-// }
+
 //! Handle product details
 function* handleProductDetails(action) {
   try {

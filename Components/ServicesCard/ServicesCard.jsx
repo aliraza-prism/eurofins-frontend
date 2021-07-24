@@ -7,7 +7,7 @@ export default function ServicesCard(props) {
 
   return (
     <Col sm={6} md={3}>
-      <Link href="/[id]" as={`/${props?._id}`} passHref>
+      <Link href="/[id]" as={`/${props?.name}`} passHref>
         <div className={styles.services_card_wrapper}>
           <div className={styles.services_card_image}>
             <img

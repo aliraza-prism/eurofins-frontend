@@ -47,13 +47,6 @@ const TestDetails = ({ productDetail }) => {
     alert("SUBMIT DATA");
   };
 
-  console.log(
-    "=Product detail from router",
-    productDetail?._id,
-    name,
-    email,
-    message
-  );
   return (
     <div className={styles.test_details_wrapper}>
       <Container className={styles.test_details_container}>
@@ -122,7 +115,7 @@ const TestDetails = ({ productDetail }) => {
           <h4>Contact Details:</h4>
           <div>
             {contact?.map((x) => (
-              <Row key={x._id}>
+              <Row key={x._id} className="mb-3">
                 <Col sm={4}>
                   <div className={styles.contact_number}>
                     <div
