@@ -9,6 +9,7 @@
     text-align: center;
     margin-bottom: 2rem;
     text-transform: uppercase;
+    color: $heading-color;
     @media #{$sm} {
       font-size: 24px;
     }

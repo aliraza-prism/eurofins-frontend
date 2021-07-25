@@ -24,10 +24,10 @@ class BottomSlider extends React.Component {
         <CarouselProvider
           naturalSlideWidth={70}
           naturalSlideHeight={
-            window.screen <= 700 ? 50 : 8
+            window.screen.width <= 700 ? 50 : 8
           }
           totalSlides={3}
-          isPlaying={true}
+          // isPlaying={true}
           interval={3000}
         >
           <Slider>

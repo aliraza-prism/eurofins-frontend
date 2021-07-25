@@ -19,50 +19,50 @@
       margin-left: auto;
       margin-top: 1rem;
     }
-    h6{
-      color: rgb(12, 211, 12);
+    h6 {
+      color: $primary-color;
+      font-weight: 600;
     }
-    h2{
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        @media #{$sm} {
-          font-size: 24px;
-        }
+    h2 {
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      color: $heading-color;
+      @media #{$sm} {
+        font-size: 24px;
+      }
     }
 
     .services_list {
-        ul {
-            margin-bottom: 1rem;
-            list-style-type: none;
-            padding-left: 0rem;
-            li {
-              display: flex;
-              // align-items: center;
-              align-items: baseline;
-              margin-bottom: 1.2rem;
-              @media #{$sm} {
-                text-align: justify;
-              }
-              &::before {
-                content: "\21E8";
-                color: $white;
-                font-size: 18px;
-                font-weight: bold;
-                text-align: center;
-                margin-right: 0.5rem;
-                padding: .7rem;
-                background-color: rgb(12, 211, 12);
-                border-radius: 50%;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 16px;
-                height: 16px;
-              }
-            }
+      ul {
+        margin-bottom: 1rem;
+        list-style-type: none;
+        padding-left: 0rem;
+        li {
+          display: flex;
+          align-items: baseline;
+          margin-bottom: 1.2rem;
+          color: $text-secondary;
+          @media #{$sm} {
+            text-align: justify;
           }
-
-     
+          &::before {
+            content: "\21E8";
+            color: $white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-right: 0.5rem;
+            padding: 0.7rem;
+            background-color: $primary-color;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
     }
   }
 }

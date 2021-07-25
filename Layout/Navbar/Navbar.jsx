@@ -76,7 +76,7 @@ export default function Appbar() {
                 </Nav.Link>
                 <Nav.Link href="#link">Contact Us</Nav.Link>
                 <Nav.Link href="#link">
-                  <Button variant="success">
+                  <Button className={styles.order_btn}>
                     Order Now
                   </Button>
                 </Nav.Link>
